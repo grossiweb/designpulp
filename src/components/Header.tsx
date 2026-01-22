@@ -28,14 +28,14 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
-          isScrolled ? 'header-scrolled py-2' : 'py-4'
+          isScrolled ? 'header-scrolled py-2' : 'py-6'
         }`}
       >
         <div className="max-w-[1100px] mx-auto px-4">
           {/* Mobile Header Layout */}
           <div className="lg:hidden flex items-center justify-between">
             <button
-              className="p-2 text-gray-600 hover:text-gray-900"
+              className="p-2 text-[#797979] hover:text-[#ff9300]"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open menu"
             >
@@ -48,8 +48,8 @@ export default function Header() {
               <Image
                 src={isScrolled ? '/images/leaf-icon.png' : '/images/logo.jpg'}
                 alt="Design Pulp"
-                width={isScrolled ? 40 : 150}
-                height={isScrolled ? 40 : 94}
+                width={isScrolled ? 45 : 180}
+                height={isScrolled ? 45 : 113}
                 className="transition-all duration-300"
                 priority
               />
@@ -61,13 +61,13 @@ export default function Header() {
           {/* Desktop Header Layout - Logo on first row, Menu on second row */}
           <div className="hidden lg:block">
             {/* Row 1: Centered Logo */}
-            <div className="flex justify-center pb-4">
+            <div className="flex justify-center pb-5">
               <Link href="/" className="block">
                 <Image
                   src={isScrolled ? '/images/leaf-icon.png' : '/images/logo.jpg'}
                   alt="Design Pulp"
-                  width={isScrolled ? 50 : 200}
-                  height={isScrolled ? 50 : 125}
+                  width={isScrolled ? 55 : 280}
+                  height={isScrolled ? 55 : 175}
                   className="transition-all duration-300"
                   priority
                 />
@@ -75,8 +75,8 @@ export default function Header() {
             </div>
 
             {/* Row 2: Centered Navigation */}
-            <nav className="flex justify-center border-t border-gray-100 pt-4">
-              <ul className="flex items-center space-x-10">
+            <nav className="flex justify-center border-t border-[#e6e6e6]">
+              <ul className="flex items-center space-x-12">
                 {navigation.map((item) => (
                   <li key={item.name}>
                     {item.external ? (
@@ -84,14 +84,14 @@ export default function Header() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm uppercase tracking-wider text-gray-700 hover:text-gray-900 transition-colors"
+                        className="nav-link"
                       >
                         {item.name}
                       </a>
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm uppercase tracking-wider text-gray-700 hover:text-gray-900 transition-colors"
+                        className="nav-link"
                       >
                         {item.name}
                       </Link>
@@ -114,7 +114,7 @@ export default function Header() {
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         <div className="p-6">
           <button
-            className="absolute top-4 right-4 p-2 text-gray-600 hover:text-gray-900"
+            className="absolute top-4 right-4 p-2 text-[#797979] hover:text-[#ff9300]"
             onClick={() => setIsMobileMenuOpen(false)}
             aria-label="Close menu"
           >
@@ -128,13 +128,13 @@ export default function Header() {
               <Image
                 src="/images/logo.jpg"
                 alt="Design Pulp"
-                width={150}
-                height={94}
+                width={180}
+                height={113}
               />
             </Link>
 
             <nav>
-              <ul className="space-y-4">
+              <ul className="space-y-2">
                 {navigation.map((item) => (
                   <li key={item.name}>
                     {item.external ? (
@@ -142,7 +142,7 @@ export default function Header() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block text-sm uppercase tracking-wider text-gray-700 hover:text-gray-900 py-2"
+                        className="mobile-nav-link"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}
@@ -150,7 +150,7 @@ export default function Header() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="block text-sm uppercase tracking-wider text-gray-700 hover:text-gray-900 py-2"
+                        className="mobile-nav-link"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}
@@ -165,7 +165,7 @@ export default function Header() {
       </div>
 
       {/* Spacer for fixed header */}
-      <div className={`${isScrolled ? 'h-[80px]' : 'h-[200px]'} lg:${isScrolled ? 'h-[80px]' : 'h-[220px]'} transition-all duration-300`} />
+      <div className={`transition-all duration-300 ${isScrolled ? 'h-[70px] lg:h-[90px]' : 'h-[140px] lg:h-[280px]'}`} />
     </>
   );
 }
