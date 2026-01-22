@@ -1,0 +1,58 @@
+		@media only screen and (max-width: 1000px){
+									.blog_slider_holder .blog_slider.simple_slider .blog_text_holder_inner2{
+			width: 45.5%;
+			}
+							.content .container .container_inner.default_template_holder,
+			.content .container .container_inner.page_container_inner {
+			padding-top:30px !important; /*important because of the inline style on page*/
+			}
+				}
+		@media only screen and (min-width: 480px) and (max-width: 768px){
+
+					section.parallax_section_holder{
+			height: auto !important;
+			min-height: 400px;
+			}
+						}
+		@media only screen and (max-width: 768px){
+		
+		
+		
+		
+		
+		
+		
+		
+					.blog_slider_holder .blog_slider.simple_slider .blog_text_holder_inner2 {
+			width: 65%;
+			}
+		
+		
+		
+		
+		
+		}
+		@media only screen and (max-width: 600px) {
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				}
+		@media only screen and (max-width: 480px){
+
+					section.parallax_section_holder {
+			height: auto !important;
+			min-height: 400px;
+			}
+		
+				
+				}
+		
+		
+	
