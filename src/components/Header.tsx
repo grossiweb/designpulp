@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#e6e6e6] transition-all duration-300 ${
           isScrolled ? 'header-scrolled py-2' : 'py-6'
         }`}
       >
@@ -61,7 +61,7 @@ export default function Header() {
           {/* Desktop Header Layout - Logo on first row, Menu on second row */}
           <div className="hidden lg:block">
             {/* Row 1: Centered Logo */}
-            <div className="flex justify-center pb-5">
+            <div className="flex justify-center pb-2">
               <Link href="/" className="block">
                 <Image
                   src={isScrolled ? '/images/leaf-icon.png' : '/images/logo.jpg'}
@@ -75,7 +75,7 @@ export default function Header() {
             </div>
 
             {/* Row 2: Centered Navigation */}
-            <nav className="flex justify-center border-t border-[#e6e6e6]">
+            <nav className="flex justify-center">
               <ul className="flex items-center space-x-12">
                 {navigation.map((item) => (
                   <li key={item.name}>
@@ -124,12 +124,12 @@ export default function Header() {
           </button>
 
           <div className="mt-8">
-            <Link href="/" className="block mb-6">
+            <Link href="/" className="inline-block mb-6" onClick={() => setIsMobileMenuOpen(false)}>
               <Image
                 src="/images/logo.jpg"
                 alt="Design Pulp"
-                width={180}
-                height={113}
+                width={140}
+                height={88}
               />
             </Link>
 
@@ -165,7 +165,7 @@ export default function Header() {
       </div>
 
       {/* Spacer for fixed header */}
-      <div className={`transition-all duration-300 ${isScrolled ? 'h-[70px] lg:h-[90px]' : 'h-[140px] lg:h-[280px]'}`} />
+      <div className={`transition-all duration-300 ${isScrolled ? 'h-[70px] lg:h-[90px]' : 'h-[120px] lg:h-[240px]'}`} />
     </>
   );
 }
