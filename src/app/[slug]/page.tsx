@@ -8,8 +8,17 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// Reserved slugs that should not be treated as blog posts
+const RESERVED_SLUGS = ['about', 'contact'];
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+
+  // Skip reserved slugs
+  if (RESERVED_SLUGS.includes(slug)) {
+    return {};
+  }
+
   const post = await getPost(slug);
 
   if (!post) {
@@ -36,13 +45,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export async function generateStaticParams() {
   const { posts } = await getPosts(1, 50);
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts
+    .filter((post) => !RESERVED_SLUGS.includes(post.slug))
+    .map((post) => ({
+      slug: post.slug,
+    }));
 }
 
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
+
+  // Skip reserved slugs - let their specific pages handle them
+  if (RESERVED_SLUGS.includes(slug)) {
+    notFound();
+  }
+
   const post = await getPost(slug);
 
   if (!post) {

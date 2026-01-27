@@ -75,7 +75,7 @@ export default function HeroSlider({ posts }: HeroSliderProps) {
 
                   <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide mb-4">
                     <Link
-                      href={`/post/${post.slug}`}
+                      href={`/${post.slug}`}
                       className="hover:text-gray-600 transition-colors"
                       dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                     />
@@ -86,7 +86,7 @@ export default function HeroSlider({ posts }: HeroSliderProps) {
                   </p>
 
                   <Link
-                    href={`/post/${post.slug}`}
+                    href={`/${post.slug}`}
                     className="btn-primary inline-block"
                   >
                     Read More

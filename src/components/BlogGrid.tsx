@@ -89,7 +89,7 @@ function BlogCard({ post, index }: BlogCardProps) {
     >
       {/* Image with Date Badge */}
       <div className="relative">
-        <Link href={`/post/${post.slug}`} className="block aspect-square relative overflow-hidden">
+        <Link href={`/${post.slug}`} className="block aspect-square relative overflow-hidden">
           <Image
             src={imageUrl}
             alt={post.title.rendered.replace(/<[^>]*>/g, '')}
@@ -109,7 +109,7 @@ function BlogCard({ post, index }: BlogCardProps) {
       <div className="p-5">
         <h5 className="text-base font-medium mb-3 leading-tight">
           <Link
-            href={`/post/${post.slug}`}
+            href={`/${post.slug}`}
             className="hover:text-gray-600 transition-colors"
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           />
