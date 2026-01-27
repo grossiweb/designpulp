@@ -1,4 +1,4 @@
-const WP_API_URL = 'https://designpulp.net/wp-json/wp/v2';
+const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL || 'https://headless.designpulp.net/wp-json/wp/v2';
 
 export interface Post {
   id: number;
@@ -154,9 +154,11 @@ export function getFeaturedImageUrl(post: Post, size: 'medium' | 'large' | 'full
 }
 
 // Gravity Forms submission
+const WP_BASE_URL = process.env.NEXT_PUBLIC_WP_API_URL?.replace('/wp-json/wp/v2', '') || 'https://headless.designpulp.net';
+
 export async function submitGravityForm(formId: number, formData: Record<string, string>): Promise<{ success: boolean; message: string }> {
   try {
-    const res = await fetch(`https://designpulp.net/wp-json/gf/v2/forms/${formId}/submissions`, {
+    const res = await fetch(`${WP_BASE_URL}/wp-json/gf/v2/forms/${formId}/submissions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
