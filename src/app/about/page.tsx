@@ -15,7 +15,7 @@ export default function AboutPage() {
         <div className="relative">
           <div className="relative w-full aspect-[3/4] md:aspect-auto md:h-full min-h-[400px]">
             <Image
-              src="https://designpulp.net/wp-content/uploads/2025/07/CB7167CB-71D6-4AEA-9E91-DD8479887B47.jpg"
+              src="https://headless.designpulp.net/wp-content/uploads/2025/07/CB7167CB-71D6-4AEA-9E91-DD8479887B47.jpg"
               alt="About Design Pulp"
               fill
               className="object-cover"

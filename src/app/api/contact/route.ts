@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
 
     // Submit to Gravity Forms
     // Note: You may need to adjust the form ID and field IDs based on your Gravity Forms setup
-    const gravityFormsUrl = 'https://designpulp.net/wp-json/gf/v2/forms/1/submissions';
+    const gravityFormsUrl = 'https://headless.designpulp.net/wp-json/gf/v2/forms/1/submissions';
 
     const formData = {
       input_1: name,      // Adjust field IDs based on your Gravity Form
